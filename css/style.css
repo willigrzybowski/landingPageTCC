@@ -29,7 +29,11 @@ ul, li, a, p, h1, h2, h3 {
     text-decoration: none;
     list-style: none;
     color: rgb(58, 26, 13);
-    font-family: 'Arial' ;
+    font-family: 'Poppins Bold' ;
+}
+
+body{
+    background-color: #f6f6f6;
 }
 
 main{
@@ -40,7 +44,7 @@ main{
 nav{
     width: 100%;
     background-color: #f5f5f5;
-    height: 60px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -58,6 +62,10 @@ nav{
             font-weight: bold;
         }
     }
+}
+
+.logo{
+    margin-top: 15px;
 }
 
 .container {
@@ -97,7 +105,7 @@ nav{
     }
 
     & p {
-        width: 420px;
+        width: 450px;
         font-family: 'Cocomat Pro Bold';
         font-size: 20pt;
         text-align: justify;
@@ -111,7 +119,7 @@ nav{
     height: 100%;
     display: flex;
     align-items: flex-end;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .btn-link{
@@ -133,10 +141,43 @@ nav{
 
 .container-linha{
     width: 100%;
-    height: 85vh;
+    height: 95vh;
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    padding-bottom: 3rem;
+    background: url(../assets/png/OndaLanding.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+
+    & article{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        padding: 4rem;
+        background-color: white;
+        box-shadow: 0px 0px 10px rgba(22, 11, 0, 0.219);
+        margin-bottom: 3rem;
+    }
+
+    & .icon-container{
+        padding: 1rem;
+        background-color: #f4863e;
+        width: 140px;
+        height: 140px;
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & img {
+            width: 80px;
+            height: 80px;
+        }
+    }
 
     & .information {
         width: 150px;
@@ -147,15 +188,65 @@ nav{
 
         & h4 {
             color: #622110;
-            font-family: 'Poppins Bold';
+            font-family: 'Poppins Regular';
             text-align: center;
         }
 
-        & p {
-            font-family: 'Poppins Regular';
-            color: #622110;
-            font-size: 10pt;
-            text-align: center;
-        }
     }
+}
+
+.accordion {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    width: 80%;
+}
+
+.accordion-header {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.accordion-header span {
+    max-width: 100%;
+    white-space: nowrap;
+    font-family: 'Cocomat Pro Bold';
+    color: #622110;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.accordion-body {
+    color: #140a00;
+    font-size: 14px;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity .3s;
+
+    & p{
+        font-family: 'Poppins Regular';
+    }
+}
+
+.accordion-body.active {
+    height: 100%;
+    opacity: 1;
+    padding: 30px 0px;
+}
+
+.arrow {
+    transition: transform .2s linear;
+}
+
+.accordion:has(.active) .arrow {
+    transform: rotate(180deg);
 }
